@@ -24,31 +24,12 @@ namespace Randomizer
 
         private void startBtn_Click(object sender, EventArgs e)
         {
-            if(timer.Enabled == true)
-            {
-                resetLabels();
-                timer.Stop();
-                startBtn.Text = "START";
-                startBtn.BackColor = SystemColors.Control;
-            }
-            else
-            {
-                resetLabels();
-                timer.Start();
-                startBtn.Text = "STOP";
-                startBtn.BackColor = Color.Red;            }         
+            resetLabels();
+            randomizedNum = getRandomNumber();        
         }
 
 
-//-----------------------------------------------------------------------------------------------
-
-        private void timer_Tick(object sender, EventArgs e)
-        {  
-            randomizedNum = getRandomNumber();
-        }
-
-
-//-----------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------
 
         private int getRandomNumber()
         {

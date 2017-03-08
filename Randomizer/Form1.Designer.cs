@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.startBtn = new System.Windows.Forms.Button();
             this.viewBinBtn = new System.Windows.Forms.Button();
-            this.timer = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.digitComboBox = new System.Windows.Forms.ComboBox();
             this.viewHexBtn = new System.Windows.Forms.Button();
@@ -60,11 +58,6 @@
             this.viewBinBtn.Text = "view binary";
             this.viewBinBtn.UseVisualStyleBackColor = true;
             this.viewBinBtn.Click += new System.EventHandler(this.viewBinBtn_Click);
-            // 
-            // timer
-            // 
-            this.timer.Interval = 10;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // label1
             // 
@@ -161,7 +154,6 @@
         #endregion
         private System.Windows.Forms.Button startBtn;
         private System.Windows.Forms.Button viewBinBtn;
-        private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox digitComboBox;
         private System.Windows.Forms.Button viewHexBtn;
