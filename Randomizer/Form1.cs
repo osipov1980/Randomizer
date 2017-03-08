@@ -19,11 +19,12 @@ namespace Randomizer
             randomizedNum = 0;
         }
 
- //-----------------------------------------------------------------------------------------------
+
+//This function controls the timer and clean the lables from previous data
 
         private void startBtn_Click(object sender, EventArgs e)
         {
-            if(timer.Enabled ==true)
+            if(timer.Enabled == true)
             {
                 resetLabels();
                 timer.Stop();
@@ -38,12 +39,16 @@ namespace Randomizer
                 startBtn.BackColor = Color.Red;            }         
         }
 
+
 //-----------------------------------------------------------------------------------------------
 
         private void timer_Tick(object sender, EventArgs e)
         {  
             randomizedNum = getRandomNumber();
         }
+
+
+//-----------------------------------------------------------------------------------------------
 
         private int getRandomNumber()
         {
