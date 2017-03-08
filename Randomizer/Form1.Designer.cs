@@ -34,9 +34,9 @@
             this.digitComboBox = new System.Windows.Forms.ComboBox();
             this.viewHexBtn = new System.Windows.Forms.Button();
             this.viewDecBtn = new System.Windows.Forms.Button();
-            this.decTextBox = new System.Windows.Forms.TextBox();
-            this.binTextBox = new System.Windows.Forms.TextBox();
-            this.hexTextBox = new System.Windows.Forms.TextBox();
+            this.decLabel = new System.Windows.Forms.Label();
+            this.binLabel = new System.Windows.Forms.Label();
+            this.hexLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // startBtn
@@ -109,35 +109,48 @@
             this.viewDecBtn.UseVisualStyleBackColor = true;
             this.viewDecBtn.Click += new System.EventHandler(this.viewDecBtn_Click);
             // 
-            // decTextBox
+            // decLabel
             // 
-            this.decTextBox.Location = new System.Drawing.Point(77, 49);
-            this.decTextBox.Name = "decTextBox";
-            this.decTextBox.Size = new System.Drawing.Size(256, 20);
-            this.decTextBox.TabIndex = 16;
+            this.decLabel.AutoSize = true;
+            this.decLabel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.decLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.decLabel.Location = new System.Drawing.Point(74, 59);
+            this.decLabel.Name = "decLabel";
+            this.decLabel.Size = new System.Drawing.Size(109, 16);
+            this.decLabel.TabIndex = 19;
+            this.decLabel.Text = "Decimal Number";
             // 
-            // binTextBox
+            // binLabel
             // 
-            this.binTextBox.Location = new System.Drawing.Point(77, 96);
-            this.binTextBox.Name = "binTextBox";
-            this.binTextBox.Size = new System.Drawing.Size(256, 20);
-            this.binTextBox.TabIndex = 17;
+            this.binLabel.AutoSize = true;
+            this.binLabel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.binLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.binLabel.Location = new System.Drawing.Point(74, 99);
+            this.binLabel.Name = "binLabel";
+            this.binLabel.Size = new System.Drawing.Size(97, 16);
+            this.binLabel.TabIndex = 20;
+            this.binLabel.Text = "Binary Number";
             // 
-            // hexTextBox
+            // hexLabel
             // 
-            this.hexTextBox.Location = new System.Drawing.Point(77, 142);
-            this.hexTextBox.Name = "hexTextBox";
-            this.hexTextBox.Size = new System.Drawing.Size(256, 20);
-            this.hexTextBox.TabIndex = 18;
+            this.hexLabel.AutoSize = true;
+            this.hexLabel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.hexLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.hexLabel.Location = new System.Drawing.Point(74, 144);
+            this.hexLabel.Name = "hexLabel";
+            this.hexLabel.Size = new System.Drawing.Size(136, 16);
+            this.hexLabel.TabIndex = 21;
+            this.hexLabel.Text = "Hexadecimal number";
+            this.hexLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(405, 299);
-            this.Controls.Add(this.hexTextBox);
-            this.Controls.Add(this.binTextBox);
-            this.Controls.Add(this.decTextBox);
+            this.Controls.Add(this.hexLabel);
+            this.Controls.Add(this.binLabel);
+            this.Controls.Add(this.decLabel);
             this.Controls.Add(this.viewDecBtn);
             this.Controls.Add(this.viewHexBtn);
             this.Controls.Add(this.digitComboBox);
@@ -158,9 +171,9 @@
         private System.Windows.Forms.ComboBox digitComboBox;
         private System.Windows.Forms.Button viewHexBtn;
         private System.Windows.Forms.Button viewDecBtn;
-        private System.Windows.Forms.TextBox decTextBox;
-        private System.Windows.Forms.TextBox binTextBox;
-        private System.Windows.Forms.TextBox hexTextBox;
+        private System.Windows.Forms.Label decLabel;
+        private System.Windows.Forms.Label binLabel;
+        private System.Windows.Forms.Label hexLabel;
     }
 }
 

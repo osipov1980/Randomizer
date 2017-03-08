@@ -5,7 +5,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Randomizer
@@ -20,7 +19,7 @@ namespace Randomizer
         }
 
 
-//This function controls the timer and clean the lables from previous data
+//This function clean the lables from previous data and get random number
 
         private void startBtn_Click(object sender, EventArgs e)
         {
@@ -109,30 +108,30 @@ namespace Randomizer
 
         private void viewDecBtn_Click(object sender, EventArgs e)
         {
-            decTextBox.Text = randomizedNum.ToString();
+            decLabel.Text = randomizedNum.ToString();
         }
 
 //-----------------------------------------------------------------------------------------------
 
         private void viewBinBtn_Click(object sender, EventArgs e)
         {
-            binTextBox.Text = Convert.ToString(randomizedNum, 2);
+            binLabel.Text = Convert.ToString(randomizedNum, 2);
         }
 
 //-----------------------------------------------------------------------------------------------
 
         private void viewHexBtn_Click(object sender, EventArgs e)
         {
-            hexTextBox.Text = randomizedNum.ToString("X");
+            hexLabel.Text = randomizedNum.ToString("X");
         }
 
 //-----------------------------------------------------------------------------------------------
 
         private void resetLabels()
         {
-            decTextBox.Text = "dec";
-            binTextBox.Text = "bin";
-            hexTextBox.Text = "hex";
+            decLabel.Text = "Decimal Number";
+            binLabel.Text = "Binary Number";
+            hexLabel.Text = "Hexadecimal number";
         }
     }
 }
