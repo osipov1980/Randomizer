@@ -16,6 +16,7 @@ namespace Randomizer
         {
             InitializeComponent();
             randomizedNum = 0;
+            digitComboBox.Text = "1";
         }
 
 
