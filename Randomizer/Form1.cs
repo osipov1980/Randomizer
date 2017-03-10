@@ -107,21 +107,57 @@ namespace Randomizer
             return  rnd.Next(fromNum, toNum);  // creates a number between fromNum and toNum
         }
 
-//-----------------------------------------------------------------------------------------------
+
+        //-----------View Decimal Number---------------------------------------------------------
 
         private void viewDecBtn_Click(object sender, EventArgs e)
         {
             decLabel.Text = randomizedNum.ToString();
         }
 
-//-----------------------------------------------------------------------------------------------
+
+        //------------View Binary Number---------------------------------------------------------
 
         private void viewBinBtn_Click(object sender, EventArgs e)
         {
-            binLabel.Text = Convert.ToString(randomizedNum, 2);
+            //save string into variable (string)
+            string str = Convert.ToString(randomizedNum, 2);
+
+            //2
+            int strLen = str.Length;
+
+            //3
+            if (strLen == 4)
+            {
+                binLabel.Text = str;
+            }
+
+            if (strLen < 4)
+            {
+                char pad = '0';
+                string result = str.PadLeft(4, pad);
+                binLabel.Text = result;
+            }
+
+            if (strLen > 4)
+            {
+                int missingZeros = 4 - (strLen % 4);
+                if (missingZeros != 0)
+                {
+                    int newLen = strLen + missingZeros;
+                    char pad = '0';
+                    string result = str.PadLeft(newLen, pad);
+                    binLabel.Text = result;
+                }
+                else
+                {
+                    binLabel.Text = str;
+                }   
+            }
         }
 
-//-----------------------------------------------------------------------------------------------
+
+        //-------------View Hexadecimal Number-----------------------------------------------------------
 
         private void viewHexBtn_Click(object sender, EventArgs e)
         {
