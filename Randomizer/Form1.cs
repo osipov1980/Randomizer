@@ -20,12 +20,22 @@ namespace Randomizer
         }
 
 
-//This function clean the lables from previous data and get random number
+        //-----------startBtn_Click---------------------------------------------------------------------
 
         private void startBtn_Click(object sender, EventArgs e)
         {
             resetLabels();
             randomizedNum = getRandomNumber();        
+        }
+
+
+        //This function clean the lables from previous data
+
+        private void resetLabels()
+        {
+            decLabel.Text = "Decimal Number";
+            binLabel.Text = "Binary Number";
+            hexLabel.Text = "Hexadecimal number";
         }
 
 
@@ -35,10 +45,8 @@ namespace Randomizer
         {
             int fromNum = 0;
             int toNum = 0;
-            string digitFromComboBox = digitComboBox.Text;
-            switch (digitFromComboBox)
+            switch (digitComboBox.Text)
             {
-                case "0":
                 case "1":
                     {
                         fromNum = 1;
@@ -93,12 +101,6 @@ namespace Randomizer
                         toNum = 999999999;
                     }
                     break;
-                default:
-                    {
-                        fromNum = 1;
-                        toNum = 9;
-                    }
-                    break;
             }
 
             Random rnd = new Random();
@@ -126,13 +128,5 @@ namespace Randomizer
             hexLabel.Text = randomizedNum.ToString("X");
         }
 
-//-----------------------------------------------------------------------------------------------
-
-        private void resetLabels()
-        {
-            decLabel.Text = "Decimal Number";
-            binLabel.Text = "Binary Number";
-            hexLabel.Text = "Hexadecimal number";
-        }
     }
 }
