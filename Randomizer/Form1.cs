@@ -122,7 +122,9 @@ namespace Randomizer
         {
             string str = Convert.ToString(randomizedNum, 2);  //convert from number(int) to binary and to string
 
-            binLabel.Text = addZeros(str);
+            str = addZeros(str);
+            str = addSpaces(str);
+            binLabel.Text = str;
         }
 
 
@@ -141,8 +143,8 @@ namespace Randomizer
             if (strLen < 4)
             {
                 char pad = '0';
-                string result = str.PadLeft(4, pad);
-                return result;
+                string newStr = str.PadLeft(4, pad);
+                return newStr;
             }
 
             if (strLen > 4)
@@ -152,8 +154,8 @@ namespace Randomizer
                 {
                     int newLen = strLen + missingZeros;
                     char pad = '0';
-                    string result = str.PadLeft(newLen, pad);
-                    return result;
+                    string newStr = str.PadLeft(newLen, pad);  //add to str zeros from left and save to newStr
+                    return newStr;
                 }
                 else
                 {
@@ -162,6 +164,30 @@ namespace Randomizer
             }
 
             return str;
+        }
+
+
+        //------------Add spaces between every 4 digits---------------------------------------
+
+        private string addSpaces(string strSource)
+        {
+            string str = strSource;
+            int strLen = str.Length;
+
+            if(str.Length == 4)
+            {
+                return str;
+            }
+
+            string newStr = "";
+
+            for (int i = 4; i < str.Length; i += 5)
+            {
+                newStr = str.Insert(i, " ");
+                str = newStr;
+            }
+
+            return newStr;
         }
 
 
