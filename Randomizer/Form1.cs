@@ -120,40 +120,48 @@ namespace Randomizer
 
         private void viewBinBtn_Click(object sender, EventArgs e)
         {
-            //save string into variable (string)
-            string str = Convert.ToString(randomizedNum, 2);
+            string str = Convert.ToString(randomizedNum, 2);  //convert from number(int) to binary and to string
 
-            //2
+            binLabel.Text = addZeros(str);
+        }
+
+
+        //------------Add missing zeros to Binary Number from left---------------------------------------
+
+        private string addZeros(string strSource)
+        {
+            string str = strSource;
             int strLen = str.Length;
 
-            //3
             if (strLen == 4)
             {
-                binLabel.Text = str;
+                return str;
             }
 
             if (strLen < 4)
             {
                 char pad = '0';
                 string result = str.PadLeft(4, pad);
-                binLabel.Text = result;
+                return result;
             }
 
             if (strLen > 4)
             {
                 int missingZeros = 4 - (strLen % 4);
-                if (missingZeros != 0)
+                if (missingZeros != 4)
                 {
                     int newLen = strLen + missingZeros;
                     char pad = '0';
                     string result = str.PadLeft(newLen, pad);
-                    binLabel.Text = result;
+                    return result;
                 }
                 else
                 {
-                    binLabel.Text = str;
-                }   
+                    return str;
+                }
             }
+
+            return str;
         }
 
 
