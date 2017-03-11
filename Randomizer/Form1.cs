@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Randomizer
@@ -124,6 +125,7 @@ namespace Randomizer
 
             str = addZeros(str);
             str = addSpaces(str);
+ 
             binLabel.Text = str;
         }
 
