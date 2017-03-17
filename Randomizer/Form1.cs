@@ -122,7 +122,6 @@ namespace Randomizer
             binLabel.Text = str;
         }
 
-
         //------------Add missing zeros to Binary Number from left---------------------------------------
 
         private string addZeros(string strSource)
@@ -130,39 +129,17 @@ namespace Randomizer
             string str = strSource;
             int strLen = str.Length;
 
-            if (strLen == 4)
+            while((strLen % 4) != 0)
             {
-                return str;
-            }
-
-            if (strLen < 4)
-            {
+                strLen = strLen + 1;
                 char pad = '0';
-                string newStr = str.PadLeft(4, pad);
-                return newStr;
+                str = str.PadLeft(strLen, pad);  //add to str zeros from left and save to newStr
             }
-
-            if (strLen > 4)
-            {
-                int missingZeros = 4 - (strLen % 4);
-                if (missingZeros != 4)
-                {
-                    int newLen = strLen + missingZeros;
-                    char pad = '0';
-                    string newStr = str.PadLeft(newLen, pad);  //add to str zeros from left and save to newStr
-                    return newStr;
-                }
-                else
-                {
-                    return str;
-                }
-            }
-
             return str;
         }
 
 
-        //------------Add spaces between every 4 digits---------------------------------------
+       //------------Add spaces between every 4 digits---------------------------------------
 
         private string addSpaces(string strSource)
         {
