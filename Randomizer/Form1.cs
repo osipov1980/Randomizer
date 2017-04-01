@@ -13,13 +13,26 @@ namespace Randomizer
             digitComboBox.Text = "1";
         }
 
+        //-----------create new object------------------------------------------------------------------
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            RandomNum num = new RandomNum();
+        }
+
 
         //-----------startBtn_Click---------------------------------------------------------------------
 
         private void startBtn_Click(object sender, EventArgs e)
         {
             resetLabels();
-            randomizedNum = getRandomNumber();        
+            int[] numSize = selectNumSize();
+            RandomNum num = new RandomNum();
+            int randomizedNum = num.GenerateRandomNumber(numSize);
+
+
+            decLabel.Text = randomizedNum.ToString();
+            //decLabel.Text = numSize[0].ToString();
         }
 
 
@@ -35,10 +48,11 @@ namespace Randomizer
 
         //-----------------------------------------------------------------------------------------------
 
-        private int getRandomNumber()
+        private int[] selectNumSize()
         {
             int fromNum = 0;
             int toNum = 0;
+            
             switch (digitComboBox.Text)
             {
                 case "1":
@@ -96,9 +110,8 @@ namespace Randomizer
                     }
                     break;
             }
-
-            Random rnd = new Random();
-            return  rnd.Next(fromNum, toNum);  // creates a number between fromNum and toNum
+            int[] range = new int[2] { fromNum, toNum };
+            return range;
         }
 
 
@@ -114,7 +127,7 @@ namespace Randomizer
 
         private void viewBinBtn_Click(object sender, EventArgs e)
         {
-            string str = Convert.ToString(randomizedNum, 2);  //convert from number(int) to binary and to string
+            string str = Convert.ToString(randomizedNum, 2);  //convert from decimal to binary and to string
 
             str = addZeros(str);
             str = addSpaces(str);
