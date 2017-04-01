@@ -27,12 +27,9 @@ namespace Randomizer
         {
             resetLabels();
             int[] numSize = selectNumSize();
+
             RandomNum num = new RandomNum();
-            int randomizedNum = num.GenerateRandomNumber(numSize);
-
-
-            decLabel.Text = randomizedNum.ToString();
-            //decLabel.Text = numSize[0].ToString();
+            randomizedNum = num.GenerateRandomNumber(numSize);
         }
 
 
